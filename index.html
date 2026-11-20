@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Sabbir's Information Systems research homepage.">
+<title>Sabbir | Information Systems</title>
+<style>
+:root { color-scheme: light; --ink: #182721; --green: #20654f; --line: #cbd8cf; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #f5f8f5; color: var(--ink); font: 1rem/1.65 system-ui, sans-serif; }
+.wrap { width: min(68rem, calc(100% - 3rem)); margin-inline: auto; }
+header, section + section, footer { border-color: var(--line); border-style: solid; border-width: 0; }
+header { border-bottom-width: 1px; }
+nav { display: flex; flex-wrap: wrap; gap: .65rem 1.5rem; padding-block: 1rem; }
+a { color: var(--green); text-underline-offset: .25em; }
+a:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+.brand { margin-right: auto; font-weight: 700; color: var(--ink); }
+main { display: grid; grid-template-columns: minmax(12rem, 1fr) minmax(0, 2.3fr); gap: clamp(2rem, 7vw, 6rem); padding-block: clamp(2.5rem, 9vw, 6rem); }
+h1, h2 { font: 400 clamp(2rem, 4vw, 3rem)/1.15 Georgia, serif; letter-spacing: -.035em; margin: 0; }
+h1 { font-size: clamp(3.5rem, 8vw, 5.5rem); }
+h3, p { margin: 0; }
+p { margin-top: .75rem; }
+section + section { margin-top: 2rem; padding-top: 2rem; border-top-width: 1px; }
+article { margin-top: 1.25rem; padding: 1.25rem; background: #e6efe8; border-left: 3px solid var(--green); }
+footer { padding-block: 1rem; border-top-width: 1px; }
+@media (max-width: 46rem) { main { grid-template-columns: 1fr; } .brand { flex-basis: 100%; } }
+</style>
+</head>
+<body>
+<header>
+<nav class="wrap" aria-label="Primary">
+<a class="brand" href="#home">Sabbir</a>
+<a href="#research">Research</a>
+<a href="#projects">Projects</a>
+<a href="#notes">Research notes</a>
+</nav>
+</header>
+<main class="wrap" id="home">
+<div>
+<h1>Sabbir</h1>
+<p>Information Systems</p>
+<p><a href="https://github.com/SabbirGit">GitHub profile</a></p>
+</div>
+<div>
+<section id="research">
+<h2>Research interests</h2>
+<p>How do people come to rely on information systems in their day-to-day work? What explains continued use after an initial trial? This research agenda explores those questions through theory building.</p>
+</section>
+<section id="projects">
+<h2>Projects</h2>
+<article>
+<h3>Information Systems theory building</h3>
+<p>A framework for defining constructs, stating propositions, and specifying the mechanisms and conditions behind them.</p>
+</article>
+</section>
+<section id="notes">
+<h2>Research notes</h2>
+<article>
+<h3>Why do employees keep using a dashboard?</h3>
+<p><em>Illustrative theory draft</em></p>
+<p><strong>Scope</strong> — Employees who can choose whether to use an organizational analytics dashboard.</p>
+<p><strong>Proposition</strong> — Employees who perceive dashboard data as more reliable are more likely to keep using it.</p>
+<p><strong>Proposed mechanism</strong> — Employees who trust the data expect to spend less time verifying it before using it in their work.</p>
+</article>
+</section>
+</div>
+</main>
+<footer><div class="wrap">Sabbir · Information Systems</div></footer>
+</body>
+</html>
+
