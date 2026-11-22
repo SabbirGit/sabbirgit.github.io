@@ -6,25 +6,83 @@
 <meta name="description" content="Sabbir's Information Systems research homepage.">
 <title>Sabbir | Information Systems</title>
 <style>
-:root { color-scheme: light; --ink: #182721; --green: #20654f; --line: #cbd8cf; }
+:root {
+  color-scheme: light;
+  --ink: #17253a;
+  --muted: #4d5c70;
+  --accent: #164b88;
+  --line: #dae3ee;
+  --surface: #fff;
+}
 * { box-sizing: border-box; }
-body { margin: 0; background: #f5f8f5; color: var(--ink); font: 1rem/1.65 system-ui, sans-serif; }
-.wrap { width: min(68rem, calc(100% - 3rem)); margin-inline: auto; }
-header, section + section, footer { border-color: var(--line); border-style: solid; border-width: 0; }
-header { border-bottom-width: 1px; }
-nav { display: flex; flex-wrap: wrap; gap: .65rem 1.5rem; padding-block: 1rem; }
-a { color: var(--green); text-underline-offset: .25em; }
-a:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
-.brand { margin-right: auto; font-weight: 700; color: var(--ink); }
-main { display: grid; grid-template-columns: minmax(12rem, 1fr) minmax(0, 2.3fr); gap: clamp(2rem, 7vw, 6rem); padding-block: clamp(2.5rem, 9vw, 6rem); }
-h1, h2 { font: 400 clamp(2rem, 4vw, 3rem)/1.15 Georgia, serif; letter-spacing: -.035em; margin: 0; }
-h1 { font-size: clamp(3.5rem, 8vw, 5.5rem); }
-h3, p { margin: 0; }
-p { margin-top: .75rem; }
-section + section { margin-top: 2rem; padding-top: 2rem; border-top-width: 1px; }
-article { margin-top: 1.25rem; padding: 1.25rem; background: #e6efe8; border-left: 3px solid var(--green); }
-footer { padding-block: 1rem; border-top-width: 1px; }
-@media (max-width: 46rem) { main { grid-template-columns: 1fr; } .brand { flex-basis: 100%; } }
+body { margin: 0; background: #edf2f8; color: var(--ink); font: 1rem/1.6 system-ui, sans-serif; }
+.wrap { width: min(54rem, calc(100% - 2rem)); margin-inline: auto; }
+header { background: var(--surface); border-bottom: 1px solid var(--line); }
+nav { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem 1.5rem; padding-block: .9rem; }
+a { color: var(--accent); text-underline-offset: .22em; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+nav a { text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+.brand { margin-right: auto; color: var(--ink); font-weight: 750; }
+main { display: grid; gap: 1rem; padding-block: clamp(1.125rem, 4vw, 2.75rem); }
+.profile, section { background: var(--surface); border: 1px solid var(--line); border-radius: 1.125rem; }
+.profile { overflow: hidden; }
+.cover {
+  height: clamp(6.75rem, 17vw, 10.5rem);
+  background: radial-gradient(ellipse at 87% -20%, #527bae 0%, transparent 65%),
+              linear-gradient(118deg, #14253e 13%, #234870 76%, #306391);
+}
+.profile-body, section { padding: clamp(1.125rem, 4vw, 2rem); }
+.profile-body { padding-top: 0; }
+.monogram {
+  display: grid;
+  place-items: center;
+  position: relative;
+  margin-top: -2.25rem;
+  margin-bottom: .8rem;
+  width: 4.75rem;
+  height: 4.75rem;
+  border: 4px solid var(--surface);
+  border-radius: 1rem;
+  background: #ffdb9f;
+  color: #192941;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: clamp(2rem, 6vw, 3.25rem); line-height: 1.1; letter-spacing: -.045em; }
+h2 { font-size: 1.4rem; line-height: 1.25; letter-spacing: -.02em; }
+h3 { font-size: 1.075rem; }
+p { margin-top: .55rem; }
+.headline, .meta, footer { color: var(--muted); }
+.profile-link {
+  display: inline-block;
+  margin-top: .65rem;
+  padding: .35rem .85rem;
+  border: 1px solid var(--line);
+  border-radius: .55rem;
+  text-decoration: none;
+  font-weight: 650;
+}
+.profile-link:hover { background: #edf2f8; }
+.timeline { margin: 1.25rem 0 0 .33rem; padding: 0 0 0 1.35rem; border-left: 2px solid var(--line); list-style: none; }
+.timeline li { position: relative; overflow-wrap: anywhere; }
+.timeline li::before {
+  content: "";
+  position: absolute;
+  top: .42rem;
+  left: -1.73rem;
+  width: .625rem;
+  height: .625rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--surface);
+}
+.timeline li + li { margin-top: 1.25rem; }
+.timeline p { margin-top: .2rem; }
+footer { padding-bottom: 1.5rem; font-size: .875rem; }
+@media (max-width: 26rem) { nav { gap: .45rem 1rem; } }
 </style>
 </head>
 <body>
@@ -36,31 +94,35 @@ footer { padding-block: 1rem; border-top-width: 1px; }
 </nav>
 </header>
 <main class="wrap" id="home">
-<div>
-<h1>Sabbir</h1>
-<p>Information Systems</p>
-<p><a href="https://github.com/SabbirGit">GitHub profile</a></p>
+<div class="profile">
+<div class="cover" aria-hidden="true"></div>
+<div class="profile-body">
+<div class="monogram" aria-hidden="true">SSA</div>
+<h1>Syed Sabbir Ahmed</h1>
+<p class="headline">Information Systems</p>
+<p><a class="profile-link" href="https://github.com/SabbirGit">GitHub profile</a></p>
 </div>
-<div>
+</div>
 <section id="research">
 <h2>Research interests</h2>
 <p>How do people come to rely on information systems in their day-to-day work? What explains continued use after an initial trial? This research agenda explores those questions through theory building.</p>
 </section>
 <section id="education">
 <h2>Education</h2>
-<article>
+<ol class="timeline">
+<li>
 <h3>Åbo Akademi University</h3>
 <p>Master’s studies in Information Systems · Governance of Digitalization</p>
-<p>Turku, Finland · 2023–2025</p>
+<p class="meta">Turku, Finland · 2023–2025</p>
 <p><a href="https://doria.fi/handle/10024/192758">Comparative Analysis of Explainable Models for Clinical Decision Support System</a></p>
-</article>
-<article>
+</li>
+<li>
 <h3>Stamford University Bangladesh</h3>
 <p>BBA in Marketing</p>
-<p>2017–2022</p>
-</article>
+<p class="meta">2017–2022</p>
+</li>
+</ol>
 </section>
-</div>
 </main>
 <footer><div class="wrap">Sabbir · Information Systems</div></footer>
 </body>
